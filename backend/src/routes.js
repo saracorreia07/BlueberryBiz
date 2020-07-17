@@ -1,17 +1,11 @@
 const express = require('express');
 
+const companyController = require('./controllers/CompanyController');
+
 const routes = express.Router();
 
-routes.post('/users', (request, response) => {
+routes.get('/companies', companyController.index);
 
-    const body = request.body;
-
-    console.log(body);
-
-    return response.json({
-        product: 'Blueberries',
-        buyer: 'Pedro Marques'
-    })
-});
+routes.post('/companies', companyController.create);
 
 module.exports = routes;

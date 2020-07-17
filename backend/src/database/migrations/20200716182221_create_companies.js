@@ -5,7 +5,7 @@ exports.up = function(knex) {
         table.string('email').notNullable();
         table.string('whatsapp').notNullable();
         table.string('city').notNullable();
-        table.string('postal code', 8).notNullable();
+        table.string('postalCode', 8).notNullable();
     });
   
 };
