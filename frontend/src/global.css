@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 14px 'PT Sans Narrow', sans-serif;
+    background:  #ccccd9;
+    -webkit-font-feature-smoothing: antialised;
+}
+
+input, button, textarea {
+    font: 400 18px 'PT Sans Narrow', sans-serif; 
+}
+
+button {
+    cursor: pointer 
+}
+
+form input {
+    width: 100%;
+    height: 40px;
+    color: #3c5488;
+    border: 1px solid #ccccd9;
+    border-radius: 4px;
+    padding: 0 12px; 
+}
