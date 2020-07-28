@@ -33,7 +33,7 @@ form input {
 .button {
     width: 100%;
     height: 50px;
-    background: #273d73;
+    background: #2c114f;
     border: 0;
     border-radius: 4px;
     color: #FFF;
@@ -50,4 +50,23 @@ form input {
 
 .button:hover {
     filter: brightness(70%);
+}
+
+.back-link{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: #3c5488;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.back-link svg {
+    margin-right: 8px;
+}
+
+.back-link:hover{
+    opacity: 0.8;
 }

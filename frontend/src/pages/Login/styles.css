@@ -28,21 +28,3 @@
     margin-bottom: 8px;
 } 
 
-.login-container section.form form a{
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    color: #3c5488;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.2s;
-}
-
-.login-container section.form form a svg {
-    margin-right: 8px;
-}
-
-.login-container section.form form a:hover{
-    opacity: 0.8;
-}
