@@ -18,7 +18,7 @@ export default function Login() {
                     <h1>Login</h1>
 
                     <input placeholder="Your ID" />
-                    <button type="submit">Enter</button>
+                    <button className="button" type="submit">Enter</button>
 
                     <a href="/register"><FiLogIn size={16} color="#3c5488" />I don't have an account yet</a>
                 </form>
