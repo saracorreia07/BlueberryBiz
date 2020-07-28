@@ -19,13 +19,13 @@ export default function Register() {
                     <h1>Register</h1>
                     <p>Enter the platform and buy high quality blueberries, while supporting your local farmers!</p>
 
-                    <Link className="back-link" to="/register"><FiArrowLeft size={16} color="#3c5488" />I don't have an account yet</Link>
+                    <Link className="back-link" to="/"><FiArrowLeft size={16} color="#3c5488" />I don't have an account yet</Link>
                 </section>
 
                 <form>
                     <input placeholder="Company's name" />
                     <input type="email" placeholder="E-mail" />
-                    <input placeholder="Whatsapp" />
+                    <input placeholder="WhatsApp" />
 
                     <div className="input-group">
                         <input placeholder="City" />
