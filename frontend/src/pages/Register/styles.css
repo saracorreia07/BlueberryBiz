@@ -27,13 +27,13 @@
 } 
 
 .register-container .content section h1 {
-    margin: 64px 0 32px;
-    font-size: 32px;
+    font-size: 36px;
     color:#2c114f;
+    margin-bottom: 30px;
 }
 
 .register-container .content section p {
-    font-size: 18px;
+    font-size: 24px;
     color: #2c114f;
     line-height: 32px;
 }
@@ -55,9 +55,8 @@
     margin-left: 8px;
 }
 
-/* .register-container .content img {
-    margin-left: 250px;
-    margin-bottom: 100px;
-} */
+.register-container .content img {
+    margin-left: 240px;
+} 
 
 
