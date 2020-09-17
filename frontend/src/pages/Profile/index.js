@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
@@ -15,25 +15,47 @@ export default function Profile() {
     const companyId = localStorage.getItem('companyId');
     const companyName = localStorage.getItem('companyName');
 
+    const history = useHistory();
+
     useEffect(() => {
         api.get('profile', {
             headers: {
-                Authorization: companyId //WATCH HERE
+                Authorization: companyId
             }
         }).then(response => {
             setOrders(response.data);
         });
     }, [companyId]);
 
+    async function handleDeleteOrder(id) {
+        try {
+            await api.delete(`orders/${id}`, {
+                headers: {
+                    Authorization: companyId
+                }
+            });
+
+            setOrders(orders.filter(order => order.id !== id))
+        } catch (err) {
+            alert('Error deleting order. Try again.');
+        }
+    }
+
+    function handleLogout() {
+
+        localStorage.clear();
+        history.push('/');
+    }
+
     return (
         <div className="profile-container">
             <header>
                 <img src={miniLogoImg} alt="Blueberry" />
 
-                <span>Welcome, {companyName}</span>
+                <span>Welcome, {companyName} </span>
 
                 <Link className="button" to="/orders/new">Register a new batch</Link>
-                <button type="button">
+                <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="#2c114f" />
                 </button>
             </header>
@@ -41,33 +63,18 @@ export default function Profile() {
             <h1>Registered batches</h1>
 
             <ul>
-                {/* <li >
-                    <strong>BATCH:</strong>
-                    <p>x</p>
-
-                    <strong>DESCRIPTION:</strong>
-                    <p>y</p>
-
-                    <strong>VALUE:</strong>
-                    <p>m</p>
-
-                    <button type="button">
-                        <FiTrash2 size={20} color="#2c114f" />
-                    </button>
-                </li> */}
-                 
-                {orders.map(orders => (
-                    <li key={orders.id}>
+                {orders.map(order => (
+                    <li key={order.id}>
                         <strong>BATCH:</strong>
-                        <p>{orders.title}</p>
+                        <p>{order.title}</p>
 
                         <strong>DESCRIPTION:</strong>
-                        <p>{orders.description}</p>
+                        <p>{order.description}</p>
 
                         <strong>VALUE:</strong>
-                        <p>{orders.value}</p>
+                        <p>{Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR' }).format(order.value)}</p>
 
-                        <button type="button">
+                        <button onClick={() => handleDeleteOrder(order.id)} type="button">
                             <FiTrash2 size={20} color="#2c114f" />
                         </button>
                     </li>
