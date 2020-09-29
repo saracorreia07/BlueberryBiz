@@ -46,5 +46,30 @@ export default StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#aaa7c7',
         marginBottom: 16
+    },
+
+    orderProperty: {
+        fontSize: 14,
+        color: '#2c114f',
+        fontWeight: 'bold'
+    },
+
+    orderValue: {
+        marginTop: 8,
+        fontSize: 15,
+        marginBottom: 24,
+        color: '#FFFFFF'
+    },
+
+    detailsButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+
+    detailsButtonText: {
+        color: '#2c114f',
+        fontSize: 15,
+        fontWeight: 'bold'
     }
 });
