@@ -37,7 +37,7 @@ export default function Orders() {
                         <Text style={styles.orderProperty}>Company:</Text>
                         <Text style={styles.orderValue}>BATATA</Text>
 
-                        <Text style={styles.orderProperty}>BATCH:</Text>
+                        <Text style={styles.orderProperty}>Batch:</Text>
                         <Text style={styles.orderValue}>Marvelous blueberries </Text>
 
                         <Text style={styles.orderProperty}>Value:</Text>
