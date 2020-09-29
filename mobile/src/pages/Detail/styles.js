@@ -5,21 +5,21 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 24,
-        paddingTop: Constants.statusBarHeight + 20
+        paddingTop: Constants.statusBarHeight + 18
     },
 
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: -10
     },
 
     order: {
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#aaa7c7',
-        marginBottom: 16,
-        marginTop: 48
+        marginBottom: 14
     },
 
     orderProperty: {

@@ -3,7 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
-import logoImg from '../../assets/minilogo.png';
+import logoImg from '../../assets/blueberries.png';
 
 import styles from './styles';
 
@@ -33,6 +33,7 @@ export default function Orders() {
                 keyExtractor={order => String(order)}
                 showsVerticalScrollIndicator={false}
                 renderItem={() => (
+
                     <View style={styles.order}>
                         <Text style={styles.orderProperty}>Company:</Text>
                         <Text style={styles.orderValue}>BATATA</Text>

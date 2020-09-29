@@ -16,7 +16,8 @@ export default StyleSheet.create({
 
     headerText: {
         fontSize: 15,
-        color: '#737380'
+        color: '#737380',
+        marginBottom: 26
     },
 
     headerTextBold: {
@@ -26,7 +27,7 @@ export default StyleSheet.create({
     title: {
         fontSize: 30,
         marginBottom: 16,
-        marginTop: 46,
+        marginTop: 10,
         color: '#2c114f',
         fontWeight: 'bold'
     },
