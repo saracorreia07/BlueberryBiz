@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 
@@ -9,9 +9,11 @@ import logoImg from '../../assets/blueberries.png';
 import styles from './styles';
 
 export default function Detail() {
-
     const navigation = useNavigation();
-    const message = 'Hi! I am reaching out because I would like to buy your fruit!';
+    const route = useRoute();
+
+    const order = route.params.order;
+    const message = `Hi ${order.name}! I am reaching out because I would like to buy your ${order.title}, with the cost of ${Intl.NumberFormat('pt-PT', {style: 'currency', currency: 'EUR'}).format(order.value)}`;
 
     function navigateBack() {
         navigation.goBack();
@@ -19,14 +21,14 @@ export default function Detail() {
 
     function sendMail() {
         MailComposer.composeAsync({
-            subject: 'Batch Name: 500gr of fresh blueberries',
-            recipients: ['sara.dsc@hotmail.com'],
+            subject: `Batch Name: ${order.title}`,
+            recipients: [order.email],
             body: message
         });
     }
 
     function sendWhatsapp() {
-        Linking.openURL(`whatsapp://send?phone=932337758&text=${message}`);
+        Linking.openURL(`whatsapp://send?phone=${order.whatsapp}&text=${message}`);
     }
 
     return (
@@ -41,13 +43,18 @@ export default function Detail() {
 
             <View style={styles.order}>
                 <Text style={[styles.orderProperty, { marginTop: 0 }]}>Company:</Text>
-                <Text style={styles.orderValue}>BATATA</Text>
+                <Text style={styles.orderValue}>{order.name} from {order.city} - {order.postalCode}</Text>
 
                 <Text style={styles.orderProperty}>Batch:</Text>
-                <Text style={styles.orderValue}>Marvelous blueberries </Text>
+                <Text style={styles.orderValue}>{order.title}</Text>
 
                 <Text style={styles.orderProperty}>Value:</Text>
-                <Text style={styles.orderValue}>5,00€</Text>
+                <Text style={styles.orderValue}>
+                    {Intl.NumberFormat('pt-PT', {
+                        style: 'currency',
+                        currency: 'EUR'
+                    }).format(order.value)}
+                </Text>
             </View>
 
             <View style={styles.contactBox}>
