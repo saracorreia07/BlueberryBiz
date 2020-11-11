@@ -26,4 +26,5 @@ The result of this project is an app that aims to directly connect the farmer wi
   
 ### Mobile - React Native
 ### Database - SQLite
+### How to Run
 
