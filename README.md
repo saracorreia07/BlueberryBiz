@@ -14,6 +14,16 @@ The result of this project is an app that aims to directly connect the farmer wi
 </ul>
 
 ### Backend - Node.js
+
+<ul>
+  <li>Validation: celebrate</li>
+  <li>Connect Middleware: cors</li>
+  <li>Environment variables: cross-env</li>
+  <li>Web Framework: Express</li>
+  <li>ORM: KnexJS</li>
+  <li>Reload Monitor: Nodemon</li>
+  </ul>
+  
 ### Mobile - React Native
 ### Database - SQLite
 
