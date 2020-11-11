@@ -42,3 +42,8 @@ The result of this project is an app that aims to directly connect the farmer wi
 
 ### How to Run
 
+$ Run <strong>npm install</strong> in the backend, frontend and mobile folders to install the dependencies.
+
+$ Run <strong>npm install</strong> in the backend and frontend folders to use the web version. Access via localhost: 3000.
+
+$ Run <strong>npm install</strong> in the backend and mobile folders, access localhost: 19002, read the QR Code on your phone and use the Expo app to run the mobile version on your smartphone. 
